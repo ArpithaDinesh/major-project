@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" fill="none">
+  <defs>
+    <linearGradient id="mindSyncGrad192" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <radialGradient id="syncGlow192" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0B0C10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="192" height="192" rx="46" fill="#0B0C10"/>
+  <circle cx="96" cy="96" r="84" fill="url(#syncGlow192)"/>
+
+  <!-- Left Hemisphere Loop -->
+  <path d="M96 96 C73 61, 35 65, 35 96 C35 127, 73 131, 96 96" 
+        stroke="url(#mindSyncGrad192)" 
+        stroke-width="9.5" 
+        stroke-linecap="round"
+        fill="none"/>
+
+  <!-- Right Hemisphere Loop -->
+  <path d="M96 96 C119 131, 157 127, 157 96 C157 65, 119 61, 96 96" 
+        stroke="url(#mindSyncGrad192)" 
+        stroke-width="9.5" 
+        stroke-linecap="round"
+        fill="none"/>
+
+  <!-- Sync Orbit Nodes -->
+  <circle cx="65" cy="73" r="6.5" fill="#8B5CF6"/>
+  <circle cx="127" cy="119" r="6.5" fill="#06B6D4"/>
+
+  <!-- Core Sync Hub -->
+  <circle cx="96" cy="96" r="11.5" fill="#12131C" stroke="url(#mindSyncGrad192)" stroke-width="4.5"/>
+  <circle cx="96" cy="96" r="4.8" fill="#FFFFFF"/>
+</svg>

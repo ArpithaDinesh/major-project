@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="mindSyncGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <radialGradient id="syncGlow512" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0B0C10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="120" fill="#0B0C10"/>
+  <circle cx="256" cy="256" r="224" fill="url(#syncGlow512)"/>
+
+  <!-- Left Hemisphere Loop -->
+  <path d="M256 256 C194 163, 93 173, 93 256 C93 339, 194 349, 256 256" 
+        stroke="url(#mindSyncGrad512)" 
+        stroke-width="25" 
+        stroke-linecap="round"
+        fill="none"/>
+
+  <!-- Right Hemisphere Loop -->
+  <path d="M256 256 C318 349, 419 339, 419 256 C419 173, 318 163, 256 256" 
+        stroke="url(#mindSyncGrad512)" 
+        stroke-width="25" 
+        stroke-linecap="round"
+        fill="none"/>
+
+  <!-- Orbit Sync Nodes -->
+  <circle cx="173" cy="195" r="17" fill="#8B5CF6"/>
+  <circle cx="339" cy="317" r="17" fill="#06B6D4"/>
+
+  <!-- Central Sync Hub -->
+  <circle cx="256" cy="256" r="31" fill="#12131C" stroke="url(#mindSyncGrad512)" stroke-width="12"/>
+  <circle cx="256" cy="256" r="13" fill="#FFFFFF"/>
+</svg>

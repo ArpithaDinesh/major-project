@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="mindSyncGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="glowWave" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.8"/>
+    </linearGradient>
+    <radialGradient id="syncGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0B0C10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Dark Background & Ambient Radial Glow -->
+  <rect width="100" height="100" rx="24" fill="#0B0C10"/>
+  <circle cx="50" cy="50" r="44" fill="url(#syncGlow)"/>
+
+  <!-- Synchronized Neural Infinity Loop -->
+  <!-- Left Hemisphere Loop -->
+  <path d="M50 50 C38 32, 18 34, 18 50 C18 66, 38 68, 50 50" 
+        stroke="url(#mindSyncGrad)" 
+        stroke-width="5" 
+        stroke-linecap="round"
+        fill="none"/>
+
+  <!-- Right Hemisphere Loop -->
+  <path d="M50 50 C62 68, 82 66, 82 50 C82 34, 62 32, 50 50" 
+        stroke="url(#mindSyncGrad)" 
+        stroke-width="5" 
+        stroke-linecap="round"
+        fill="none"/>
+
+  <!-- Synchronized Synapse Pulses / Orbit Nodes -->
+  <!-- Top Node -->
+  <circle cx="34" cy="38" r="3.5" fill="#8B5CF6"/>
+  <!-- Bottom Node -->
+  <circle cx="66" cy="62" r="3.5" fill="#06B6D4"/>
+
+  <!-- Central Sync Core -->
+  <circle cx="50" cy="50" r="6" fill="#12131C" stroke="url(#mindSyncGrad)" stroke-width="2.5"/>
+  <circle cx="50" cy="50" r="2.5" fill="#FFFFFF"/>
+</svg>
