@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useKnowledge } from '../../context/KnowledgeContext';
-import { MindSyncLogo } from './MindSyncLogo';
+import { MemoraLogo } from './MemoraLogo';
 
 export const Sidebar = () => {
   const { user, logout } = useAuth();
@@ -32,9 +32,9 @@ export const Sidebar = () => {
       {/* 1. Brand Logo Header */}
       <div className="h-16 flex items-center px-5 border-b border-palette-border dark:border-dark-border shrink-0">
         <NavLink to="/" className="flex items-center gap-3 w-full group">
-          <MindSyncLogo size="sm" className="group-hover:scale-105 transition-transform shrink-0" />
+          <MemoraLogo size="md" className="group-hover:scale-105 transition-transform shrink-0" />
           <span className="font-bold text-lg tracking-tight text-palette-navy dark:text-white">
-            MindSync
+            MEMORA
           </span>
         </NavLink>
       </div>

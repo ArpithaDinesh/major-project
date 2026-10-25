@@ -3,7 +3,7 @@ import { useNavigate, Navigate } from 'react-router-dom';
 import { ArrowRight, AlertCircle, Loader2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
-import { MindSyncLogo } from '../components/common/MindSyncLogo';
+import { MemoraLogo } from '../components/common/MemoraLogo';
 
 export const AuthPage = () => {
   const { login, signup, isAuthenticated, isLoadingAuth } = useAuth();
@@ -76,10 +76,13 @@ export const AuthPage = () => {
       <div className="w-full max-w-md bg-white dark:bg-dark-surface/90 border border-palette-border dark:border-dark-border/80 rounded-3xl p-8 backdrop-blur-xl shadow-soft-card relative z-10">
         {/* Brand Logo & Name */}
         <div className="flex flex-col items-center text-center mb-8">
-          <MindSyncLogo size="xl" className="mb-3.5" />
+          <MemoraLogo size="2xl" className="mb-2" />
           <h1 className="text-2xl font-bold tracking-tight text-palette-navy dark:text-white">
-            MindSync
+            MEMORA
           </h1>
+          <p className="text-[10px] font-bold tracking-widest uppercase text-palette-clay dark:text-palette-sand mt-0.5">
+            SAVE ANYTHING. FIND IT ANYTIME.
+          </p>
           <p className="text-xs text-palette-slate dark:text-app-muted mt-1">
             {isSignUp ? 'Create your personal knowledge vault' : 'Sign in to access your knowledge vault'}
           </p>

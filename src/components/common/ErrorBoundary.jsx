@@ -1,6 +1,6 @@
 import React from 'react';
 import { AlertTriangle, RotateCcw, Home } from 'lucide-react';
-import { MindSyncLogo } from './MindSyncLogo';
+import { MemoraLogo } from './MemoraLogo';
 
 export class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('MindSync React ErrorBoundary caught an error:', error, errorInfo);
+    console.error('Memora React ErrorBoundary caught an error:', error, errorInfo);
   }
 
   handleReload = () => {
@@ -30,7 +30,7 @@ export class ErrorBoundary extends React.Component {
       return (
         <div className="min-h-screen bg-palette-cream dark:bg-dark-bg text-palette-navy dark:text-white flex flex-col items-center justify-center p-6 text-center select-none">
           <div className="w-full max-w-md p-6 sm:p-8 rounded-3xl bg-white dark:bg-dark-card border border-palette-border dark:border-dark-border shadow-soft-card flex flex-col items-center animate-fadeIn">
-            <MindSyncLogo size="lg" className="mb-4" />
+            <MemoraLogo size="lg" className="mb-4" />
             
             <div className="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-600 dark:text-rose-400 mb-3">
               <AlertTriangle className="w-6 h-6" />
@@ -40,7 +40,7 @@ export class ErrorBoundary extends React.Component {
               Something went wrong
             </h2>
             <p className="text-xs text-palette-slate dark:text-app-muted mb-4 max-w-xs">
-              MindSync encountered an unexpected rendering issue. Don't worry, your knowledge vault is safe.
+              Memora encountered an unexpected rendering issue. Don't worry, your knowledge vault is safe.
             </p>
 
             {this.state.error?.message && (

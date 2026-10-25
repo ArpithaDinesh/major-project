@@ -122,11 +122,11 @@ export const DetailModal = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md animate-fadeIn">
       <div 
-        className="w-full max-w-3xl bg-dark-card border border-dark-border rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]"
+        className="w-full max-w-3xl bg-white dark:bg-dark-card border border-palette-border dark:border-dark-border rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-dark-border/80 bg-dark-surface/80">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-palette-border dark:border-dark-border/80 bg-palette-cream/70 dark:bg-dark-surface/80">
           <div className="flex items-center gap-3 min-w-0">
             <span className="text-xs px-2.5 py-1 rounded-lg bg-accent/15 text-accent-light border border-accent/30 font-semibold uppercase tracking-wider shrink-0">
               {item.imageCategory ? item.imageCategory.replace('_', ' ') : item.type}
@@ -140,7 +140,7 @@ export const DetailModal = () => {
                   className="text-base font-bold text-white bg-dark-bg border border-dark-border focus:border-accent rounded-lg px-2.5 py-1 outline-none w-full max-w-md"
                 />
               ) : (
-                <h3 className="text-base font-bold text-white truncate">{item.title}</h3>
+                <h3 className="text-base font-bold text-palette-navy dark:text-white truncate">{item.title}</h3>
               )}
               <p className="text-xs text-app-subtle">{formattedDate} • {item.category}</p>
             </div>
@@ -160,7 +160,7 @@ export const DetailModal = () => {
               className={`p-2 rounded-xl border transition-colors cursor-pointer flex items-center gap-1 text-xs font-semibold ${
                 isEditing 
                   ? 'bg-accent/20 border-accent text-accent-light hover:bg-accent/30' 
-                  : 'border-dark-border hover:bg-dark-hover text-app-subtle hover:text-white'
+                  : 'border-dark-border hover:bg-dark-hover text-palette-slate dark:text-app-subtle hover:text-palette-navy dark:hover:text-white'
               }`}
               title={isEditing ? "Save Corrections" : "Correct / Edit Inaccurate Fields"}
             >
@@ -180,7 +180,7 @@ export const DetailModal = () => {
             <button
               onClick={() => toggleFavorite(item.id)}
               className={`p-2 rounded-xl border border-dark-border hover:bg-dark-hover transition-colors cursor-pointer ${
-                item.favorite ? 'text-amber-400 border-amber-400/40' : 'text-app-subtle hover:text-white'
+                item.favorite ? 'text-amber-400 border-amber-400/40' : 'text-palette-slate dark:text-app-subtle hover:text-palette-navy dark:hover:text-white'
               }`}
               title="Toggle Favorite"
             >
@@ -189,7 +189,7 @@ export const DetailModal = () => {
 
             <button
               onClick={handleCopyContent}
-              className="p-2 rounded-xl border border-dark-border hover:bg-dark-hover text-app-subtle hover:text-white transition-colors cursor-pointer"
+              className="p-2 rounded-xl border border-dark-border hover:bg-dark-hover text-palette-slate dark:text-app-subtle hover:text-palette-navy dark:hover:text-white transition-colors cursor-pointer"
               title="Copy text"
             >
               {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
@@ -205,7 +205,7 @@ export const DetailModal = () => {
 
             <button
               onClick={closeDetail}
-              className="p-2 rounded-xl text-app-subtle hover:text-white hover:bg-dark-hover transition-colors cursor-pointer ml-1"
+              className="p-2 rounded-xl text-palette-slate dark:text-app-subtle hover:text-palette-navy dark:hover:text-white hover:bg-dark-hover transition-colors cursor-pointer ml-1"
             >
               <X className="w-5 h-5" />
             </button>
@@ -316,7 +316,7 @@ export const DetailModal = () => {
                               className="w-full bg-dark-surface border border-dark-border rounded px-2 py-1 text-xs text-white outline-none"
                             />
                           ) : (
-                            <span className="text-white font-medium break-words font-mono">
+                            <span className="text-palette-navy dark:text-white font-medium break-words font-mono">
                               {typeof val === 'object' ? JSON.stringify(val) : String(val)}
                             </span>
                           )}

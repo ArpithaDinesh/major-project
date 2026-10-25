@@ -16,7 +16,7 @@ import {
 import { useKnowledge } from '../../context/KnowledgeContext';
 import { useAuth } from '../../context/AuthContext';
 import { usePWAInstall } from '../../hooks/usePWAInstall';
-import { MindSyncLogo } from './MindSyncLogo';
+import { MemoraLogo } from './MemoraLogo';
 
 export const TopNav = () => {
   const { searchQuery, setSearchQuery, backendStatus } = useKnowledge();
@@ -47,9 +47,9 @@ export const TopNav = () => {
           
           {/* 1. Left: MindSync Brand */}
           <NavLink to="/" className="flex items-center gap-3 group shrink-0">
-            <MindSyncLogo size="md" className="group-hover:scale-105 transition-transform" />
+            <MemoraLogo size="md" className="group-hover:scale-105 transition-transform" />
             <span className="font-bold text-lg tracking-tight theme-gradient-text">
-              MindSync
+              Memora
             </span>
           </NavLink>
 

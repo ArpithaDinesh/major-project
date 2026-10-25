@@ -16,8 +16,8 @@ export const InstallPrompt = () => {
             <Smartphone className="w-5 h-5 text-accent-light" />
           </div>
           <div>
-            <h4 className="text-sm font-semibold text-white flex items-center gap-2">
-              Install MindSync Progressive Web App
+            <h4 className="text-sm font-semibold text-palette-navy dark:text-white flex items-center gap-2">
+              Install Memora Progressive Web App
               <span className="text-[10px] px-2 py-0.5 rounded-full bg-accent/20 text-accent-light font-mono">Offline Ready</span>
             </h4>
             <p className="text-xs text-app-muted mt-0.5">
@@ -29,7 +29,7 @@ export const InstallPrompt = () => {
         <div className="flex items-center gap-2 self-end sm:self-center">
           <button
             onClick={() => setDismissed(true)}
-            className="px-3 py-1.5 rounded-xl text-xs font-medium text-app-subtle hover:text-white transition-colors cursor-pointer"
+            className="px-3 py-1.5 rounded-xl text-xs font-medium text-palette-slate dark:text-app-subtle hover:text-palette-navy dark:hover:text-white transition-colors cursor-pointer"
           >
             Dismiss
           </button>

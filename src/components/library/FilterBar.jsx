@@ -50,8 +50,8 @@ export const FilterBar = () => {
                 onClick={() => setSelectedType(opt.id)}
                 className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer whitespace-nowrap ${
                   active
-                    ? 'bg-accent text-white'
-                    : 'bg-dark-surface/90 text-app-muted hover:text-white border border-dark-border/80 hover:bg-dark-hover'
+                    ? 'bg-palette-navy text-white shadow-sm'
+                    : 'bg-white dark:bg-dark-surface/90 text-palette-slate dark:text-app-muted hover:text-palette-navy dark:hover:text-white border border-palette-border dark:border-dark-border hover:bg-palette-cream dark:hover:bg-dark-hover'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -69,11 +69,11 @@ export const FilterBar = () => {
             <select
               value={selectedSort}
               onChange={(e) => setSelectedSort(e.target.value)}
-              className="bg-transparent text-app-muted hover:text-white outline-none cursor-pointer text-xs"
+              className="bg-transparent text-palette-slate dark:text-app-muted hover:text-palette-navy dark:hover:text-white outline-none cursor-pointer text-xs"
             >
-              <option value="newest" className="bg-dark-card text-white">Newest First</option>
-              <option value="oldest" className="bg-dark-card text-white">Oldest First</option>
-              <option value="title" className="bg-dark-card text-white">Title (A-Z)</option>
+              <option value="newest" className="bg-white dark:bg-dark-card text-palette-navy dark:text-white">Newest First</option>
+              <option value="oldest" className="bg-white dark:bg-dark-card text-palette-navy dark:text-white">Oldest First</option>
+              <option value="title" className="bg-white dark:bg-dark-card text-palette-navy dark:text-white">Title (A-Z)</option>
             </select>
           </div>
 

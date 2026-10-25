@@ -331,7 +331,7 @@ export const CaptureModal = () => {
       "Extracting key entities and conceptual tags...",
       "Generating vector embeddings across multi-modal space...",
       "Detecting actionable dates & reminders...",
-      "Synchronizing with MindSync Vault..."
+      "Synchronizing with Memora Vault..."
     ];
 
     for (let i = 0; i < steps.length; i++) {
@@ -376,7 +376,7 @@ export const CaptureModal = () => {
     if (activeTab === 'note') {
       finalItem.content = textContent;
       finalItem.summary = textContent.slice(0, 160) + (textContent.length > 160 ? '...' : '');
-      finalItem.entities = ["Markdown Notes", "MindSync Knowledge", category];
+      finalItem.entities = ["Markdown Notes", "Memora Knowledge", category];
       if (textContent.toLowerCase().includes('tomorrow') || textContent.toLowerCase().includes('due') || textContent.toLowerCase().includes('deadline')) {
         finalItem.detectedEvents = [{
           id: `ev-${Date.now()}`,
@@ -388,7 +388,7 @@ export const CaptureModal = () => {
       }
     } else if (activeTab === 'voice') {
       finalItem.duration = formattedTime || "01:25";
-      finalItem.content = "Transcription: [Recorded via MindSync audio engine]: Captured audio transcript. Discussion points, action items, and technical summary synthesized.";
+      finalItem.content = "Transcription: [Recorded via Memora audio engine]: Captured audio transcript. Discussion points, action items, and technical summary synthesized.";
       finalItem.summary = `Voice memo recorded on ${new Date().toLocaleDateString()} with duration ${finalItem.duration}.`;
       finalItem.entities = ["Voice Memo", "Audio Transcription", "Whisper AI"];
       finalItem.detectedEvents = [{
@@ -491,7 +491,7 @@ export const CaptureModal = () => {
     "Extracting key entities and conceptual tags...",
     "Generating vector embeddings across multi-modal space...",
     "Detecting actionable dates & reminders...",
-    "Synchronizing with MindSync Vault..."
+    "Synchronizing with Memora Vault..."
   ];
 
   return (
@@ -507,7 +507,7 @@ export const CaptureModal = () => {
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-white leading-tight">Capture Knowledge</h3>
+              <h3 className="text-base font-bold text-palette-navy dark:text-white leading-tight">Capture Knowledge</h3>
               <p className="text-xs text-app-subtle">Ingest, extract, & index information seamlessly</p>
             </div>
           </div>
@@ -553,7 +553,7 @@ export const CaptureModal = () => {
                   <Sparkles className="w-8 h-8 text-accent-light" />
                 </div>
               </div>
-              <h4 className="text-lg font-bold text-white mb-2">MindSync Ingestion Engine</h4>
+              <h4 className="text-lg font-bold text-palette-navy dark:text-white mb-2">Memora Ingestion Engine</h4>
               <p className="text-xs text-app-muted max-w-sm mb-6">
                 Embedding content, extracting topics, and synchronizing with your personal knowledge base...
               </p>

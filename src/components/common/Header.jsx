@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Search, Sun, Moon } from 'lucide-react';
 import { useKnowledge } from '../../context/KnowledgeContext';
 import { useAuth } from '../../context/AuthContext';
-import { MindSyncLogo } from './MindSyncLogo';
+import { MemoraLogo } from './MemoraLogo';
 
 export const Header = () => {
   const { searchQuery, setSearchQuery } = useKnowledge() || {};
@@ -18,7 +18,7 @@ export const Header = () => {
 
   // Ensure theme preference is loaded and applied on mount
   useEffect(() => {
-    const saved = localStorage.getItem('mindsync_theme');
+    const saved = localStorage.getItem('memora_theme') || localStorage.getItem('mindsync_theme');
     if (saved === 'light') {
       document.documentElement.classList.remove('dark');
       document.documentElement.classList.add('light');
@@ -34,11 +34,13 @@ export const Header = () => {
     if (document.documentElement.classList.contains('light')) {
       document.documentElement.classList.remove('light');
       document.documentElement.classList.add('dark');
+      localStorage.setItem('memora_theme', 'dark');
       localStorage.setItem('mindsync_theme', 'dark');
       setIsDark(true);
     } else {
       document.documentElement.classList.remove('dark');
       document.documentElement.classList.add('light');
+      localStorage.setItem('memora_theme', 'light');
       localStorage.setItem('mindsync_theme', 'light');
       setIsDark(false);
     }
@@ -57,8 +59,8 @@ export const Header = () => {
     <header className="sticky top-0 z-30 bg-palette-cream/90 backdrop-blur-xl border-b border-palette-border px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
       {/* Mobile Brand Title (visible only on small screens when sidebar is hidden) */}
       <div className="flex items-center gap-2.5 md:hidden">
-        <MindSyncLogo size="sm" />
-        <span className="font-bold text-base tracking-tight text-palette-navy">MindSync</span>
+        <MemoraLogo size="sm" />
+        <span className="font-bold text-base tracking-tight text-palette-navy dark:text-white">Memora</span>
       </div>
 
       {/* Global Knowledge Search Bar */}

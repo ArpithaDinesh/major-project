@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import { knowledgeApi } from '../services/api';
 import { ChatBubble } from '../components/chat/ChatBubble';
-import { MindSyncLogo } from '../components/common/MindSyncLogo';
+import { MemoraLogo } from '../components/common/MemoraLogo';
 import { MOCK_CHAT_SUGGESTIONS } from '../services/mockData';
 
 export const ChatPage = () => {
@@ -17,7 +17,7 @@ export const ChatPage = () => {
     {
       id: 'welcome-1',
       sender: 'assistant',
-      text: "Hello! I am your **MindSync assistant**. I have indexed all your personal notes, voice recordings, diagrams, PDFs, and web bookmarks into memory.\n\nAsk me anything like *'When is my next deadline?'* or *'What did we discuss in the mobile sync voice memo?'*",
+      text: "Hello! I am your **Memora assistant**. I have indexed all your personal notes, voice recordings, diagrams, PDFs, and web bookmarks into memory.\n\nAsk me anything like *'When is my next deadline?'* or *'What did we discuss in the mobile sync voice memo?'*",
       sources: []
     }
   ]);
@@ -90,15 +90,15 @@ export const ChatPage = () => {
       {/* Top Chat Bar (Context Active button, RAG, and subtitle removed) */}
       <div className="flex items-center justify-between pb-4 border-b border-dark-border/80 shrink-0">
         <div className="flex items-center gap-3">
-          <MindSyncLogo size="md" />
-          <h1 className="text-base font-bold text-white">
-            MindSync Assistant
+          <MemoraLogo size="md" />
+          <h1 className="text-base font-bold text-palette-navy dark:text-white">
+            Memora Assistant
           </h1>
         </div>
 
         <button
           onClick={handleClearHistory}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-dark-border hover:bg-dark-hover text-app-subtle hover:text-white text-xs font-medium transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-palette-border dark:border-dark-border hover:bg-palette-cream dark:hover:bg-dark-hover text-palette-slate dark:text-app-subtle hover:text-palette-navy dark:hover:text-white text-xs font-medium transition-colors cursor-pointer"
           title="Clear chat history"
         >
           <Trash2 className="w-3.5 h-3.5" />
@@ -139,7 +139,7 @@ export const ChatPage = () => {
               <button
                 key={idx}
                 onClick={() => handleSend(suggestion)}
-                className="text-xs px-3 py-1.5 rounded-xl bg-dark-surface hover:bg-dark-hover border border-dark-border/80 hover:border-accent/40 text-app-muted hover:text-white transition-all text-left cursor-pointer truncate max-w-full"
+                className="text-xs px-3 py-1.5 rounded-xl bg-white dark:bg-dark-surface hover:bg-palette-cream dark:hover:bg-dark-hover border border-palette-border dark:border-dark-border hover:border-palette-slate text-palette-slate dark:text-app-muted hover:text-palette-navy dark:hover:text-white transition-all text-left cursor-pointer truncate max-w-full"
               >
                 "{suggestion}"
               </button>
@@ -163,12 +163,12 @@ export const ChatPage = () => {
             onChange={(e) => setInputQuery(e.target.value)}
             disabled={isLoading}
             placeholder="Ask a question about your notes, voice memos, diagrams, or documents..."
-            className="w-full bg-dark-surface/90 border border-dark-border focus:border-accent/70 focus:ring-1 focus:ring-accent/40 rounded-2xl pl-4 pr-24 py-3.5 text-sm text-white placeholder-app-subtle transition-all outline-none"
+            className="w-full bg-white dark:bg-dark-surface/90 border border-palette-border dark:border-dark-border focus:border-palette-navy dark:focus:border-accent/70 rounded-2xl pl-4 pr-24 py-3.5 text-sm text-palette-navy dark:text-white placeholder-palette-slate/60 dark:placeholder-app-subtle transition-all outline-none shadow-soft-card"
           />
           <button
             type="submit"
             disabled={isLoading || !inputQuery.trim()}
-            className="absolute right-2 px-4 py-2 rounded-xl bg-accent hover:bg-accent-hover text-white text-xs font-semibold disabled:opacity-40 transition-all flex items-center gap-1.5 cursor-pointer"
+            className="absolute right-2 px-4 py-2 rounded-xl bg-palette-navy hover:bg-palette-slate text-white text-xs font-semibold disabled:opacity-40 transition-all flex items-center gap-1.5 cursor-pointer shadow-sm"
           >
             <span>Ask</span>
             <Send className="w-3.5 h-3.5" />

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Sparkles, User, Copy, Check } from 'lucide-react';
 import { SourceCard } from './SourceCard';
 import { useAuth } from '../../context/AuthContext';
-import { MindSyncLogo } from '../common/MindSyncLogo';
+import { MemoraLogo } from '../common/MemoraLogo';
 
 export const ChatBubble = ({ message }) => {
   const { user } = useAuth();
@@ -24,7 +24,7 @@ export const ChatBubble = ({ message }) => {
       const formattedParts = parts.map((part, pIdx) => {
         if (part.startsWith('**') && part.endsWith('**')) {
           return (
-            <strong key={pIdx} className="text-white font-semibold">
+            <strong key={pIdx} className="text-palette-navy dark:text-white font-bold">
               {part.slice(2, -2)}
             </strong>
           );
@@ -34,7 +34,7 @@ export const ChatBubble = ({ message }) => {
 
       if (line.trim().startsWith('- ') || line.trim().startsWith('* ')) {
         return (
-          <li key={idx} className="ml-4 list-disc text-sm text-app-text my-0.5">
+          <li key={idx} className="ml-4 list-disc text-sm text-palette-navy dark:text-white my-0.5">
             {formattedParts}
           </li>
         );
@@ -42,14 +42,14 @@ export const ChatBubble = ({ message }) => {
 
       if (/^\d+\.\s/.test(line.trim())) {
         return (
-          <div key={idx} className="text-sm text-app-text my-1 pl-2 border-l-2 border-accent/40">
+          <div key={idx} className="text-sm text-palette-navy dark:text-white my-1 pl-2 border-l-2 border-palette-clay/60 dark:border-accent/40">
             {formattedParts}
           </div>
         );
       }
 
       return (
-        <p key={idx} className="text-sm text-app-text my-1 leading-relaxed">
+        <p key={idx} className="text-sm text-palette-navy dark:text-white my-1 leading-relaxed">
           {formattedParts}
         </p>
       );
@@ -73,7 +73,7 @@ export const ChatBubble = ({ message }) => {
 
   return (
     <div className="flex items-start gap-3 max-w-3xl mr-auto animate-slideUp">
-      <MindSyncLogo size="sm" className="mt-0.5" />
+      <MemoraLogo size="sm" className="mt-0.5" />
 
       <div className="flex-1 bg-white dark:bg-dark-card border border-palette-border dark:border-dark-border rounded-2xl rounded-tl-sm p-4 sm:p-5 shadow-soft-card relative group">
         {/* Copy button */}
